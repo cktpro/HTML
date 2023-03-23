@@ -1,0 +1,51 @@
+* {
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+}
+
+/* for h1 */
+h1 {
+    color: red;
+    font-weight: initial;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+/* style for click google */
+.google {
+    background-color: lightcyan;
+    margin-top: 20px;
+}
+
+.google a {
+    text-decoration: none;
+    color: black;
+}
+
+/* style ul */
+ul {
+    list-style: none;
+    padding: 0;
+}
+/*text color for a */
+.mauchu {
+    color: green;
+}
+
+/* unvisited link */
+a:link {
+    color: black;
+}
+
+/* visited link */
+a:visited {
+    color: gray
+}
+
+/* mouse over link */
+a:hover {
+    color: hotpink;
+}
+
+/* selected link */
+a:active {
+    color: blue;
+}
