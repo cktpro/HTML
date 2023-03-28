@@ -1,0 +1,12 @@
+.img{
+    border: 1px solid red;
+    width: 150px;
+    height: 150px;
+}
+.d{
+    display: flex;
+    margin-bottom: 10px;
+}
+.p{
+    padding-left: 10px;
+}
