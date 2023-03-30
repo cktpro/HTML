@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/demozoom.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .img-zoom-container {
+            position: relative;
+        }
+
+        .img-zoom-lens {
+            position: absolute;
+            border: 1px solid #d4d4d4;
+            /*set the size of the lens:*/
+            width: 100px;
+            height: 100px;
+        }
+
+        .img-zoom-result {
+            border: 1px solid #d4d4d4;
+            /*set the size of the result div:*/
+            width: 300px;
+            height: 300px;
+        }
+
+        img{
+            width: 300px;
+            height: 300px;
+        }
+        .zoom{
+            width: 300px;
+            height: 300px;
+            transition-property: all;
+            transition-duration: 2s;
+            transition-timing-function: linear;
+            -webkit-transition-property: all;
+            -webkit-transition-duration: 2s;
+            -webkit-transition-timing-function: linear;
+        }
+        .zoom:hover{
+            width: 500px;
+            height: 500px;
+            
+        }
+        .ani{
+            width: 100px;
+            height: 100px;
+            background-color: #000000;
+            transition-property: width;
+            transition-duration: 2s;
+            transition-timing-function: linear;
+            -webkit-transition-property: width;
+            -webkit-transition-duration: 2s;
+            -webkit-transition-timing-function: linear;
+            
+        }
+        .ani:hover{
+            width: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <figure>
+            <img src="https://hoatuoithanhthao.com/media/ftp/hoa-cam-tu-cau.jpg" alt="Hoa1">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Rosa_chinensis_petals.jpg/1200px-Rosa_chinensis_petals.jpg"
+                alt="Hoa2">
+            <img src="https://cdn3.dhht.vn/wp-content/uploads/2022/07/y-nghia-hoa-huong-duong-tang-cho-ai-tang-dip-nao-bia-1.jpg"
+                alt="Hoa3">
+            <figcaption>Images</figcaption>
+        </figure>
+    </div>
+    <a href=""><img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2OCa9R66pH6qBX6_LwEPc-Dxx_u7DK-z_NA&usqp=CAU"
+            alt="btn"></a>
+    <div class="img-zoom-container">
+        <img id="myimage" src="https://hoatuoithanhthao.com/media/ftp/hoa-cam-tu-cau.jpg" width="300" height="240"
+            alt="Girl">
+        <div id="myresult" class="img-zoom-result"></div>
+    </div>
+    <script>imageZoom("myimage", "myresult");</script>
+    <div>
+        <p>Image zoom</p>
+        <img class="zoom"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Rosa_chinensis_petals.jpg/1200px-Rosa_chinensis_petals.jpg"
+            alt="">
+    </div>
+    <div class="ani"></div>
+</body>
+
+</html>
