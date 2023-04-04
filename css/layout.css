@@ -34,13 +34,8 @@ nav a:not(:last-child){
   margin-right: 30px;
 }
 /* Footer*/
-.footer{
-    position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-}
 .footer-menu{
+  margin-top: 10px;
   background-color: coral;
 }
 .footer-term{
