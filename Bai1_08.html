@@ -6,11 +6,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tạo bảng</title>
+    <style>
+        h1{
+            color: #CC6600;
+            text-align: center;
+        }
+        body{
+            background-color: #FFEDCA;
+        }
+        table {
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+          
+        }
+        
+        td, th {
+          border: 2px solid purple;
+          text-align: center;
+          padding: 8px;
+        }
+        th{
+            background-color: #CC6600;
+        }
+        
+        tr:nth-child(even){
+          background-color:#FFFFFF;
+        }
+        </style>
 </head>
-
 <body>
-    <h1>Các món ngon Hà Nội</h1>
     <table>
+        <h1>Các món ngon Hà Nội</h1>
         <tr>
             <th>STT</th>
             <th>Tên món ăn</th>
@@ -38,6 +65,14 @@
         <tr>
             <td>6.</td>
             <td>Bún Thang Hà Nội</td>
+        </tr>
+        <tr>
+            <td>7.</td>
+            <td>Canh Lằng</td>
+        </tr>
+        <tr>
+            <td>8.</td>
+            <td>Vịt quay Lạng Sơn</td>
         </tr>
     </table>
 </body>
