@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+
+        }
+
+        td,
+        th {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        td a{
+            text-decoration: none;
+        }
+        tr:nth-child(even) {
+            background-color: whitesmoke;
+        }
+        div{
+            margin-top: 20px;
+            border: 1px solid #000;
+            padding: 5px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <table>
+        <caption>Bảng điểm</caption>
+        <tr>
+            <th rowspan="2">Tên SV</th>
+            <th rowspan="2">ĐC</th>
+            <th colspan="2">Điểm</th>
+        </tr>
+        <tr>
+            <td>HTML</td>
+            <td>SQL</td>
+        </tr>
+        <tr>
+            <td>A</td>
+            <td>ĐN</td>
+            <td>7</td>
+            <td>8</td>
+        </tr>
+        <tr>
+            <td>B</td>
+            <td>BD</td>
+            <td>9</td>
+            <td>10</td>
+        </tr>
+        <tr>
+            <td>C</td>
+            <td>QN</td>
+            <td>10</td>
+            <td>10</td>
+        </tr>
+    </table>
+
+    <div>
+        <img src="images/hoa.jpg" width="300" height="300" alt="hoa">
+        <h1>Blossoms Gallery</h1>
+        <p><i><b>The Best sellers for flowers since 1979</b></i></p>
+        <hr>
+        <table>
+            <tr>
+                <td><a href="#">Home</a></td>
+                <td><a href="#">Contract Us</a></td>
+                <td><a href="#">About Us</a></td>
+                <td><a href="#">FAQs</a></td>
+                <td><a href="#"></a></td>
+            </tr>
+        </table>
+        <p><b>Flowers are now in stock!<i>We have just received a large shipment of flowers with prices as low as $19</i></b></p>
+    </div>
+</body>
+
+</html>
