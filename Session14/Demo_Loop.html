@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+    <style>
+        div{
+            padding: 10px;
+            text-align: center;
+            margin-top: 20px;
+            border: 1px solid lightgray;
+            border-radius: 10px;
+            width: 300px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: whitesmoke;
+        }
+        input{
+            margin: 10px;
+            padding: 5px;
+            border-radius: 10px;
+            border: 0.5px solid;
+        }
+    </style>
+</head>
+<body>
+        <div>
+            <form action="javascript:max()">
+                <h4>Nhập bao nhiêu số ?</h4><br>
+                <input id="a" type="number" ><br>
+                <input type="submit" value="Submit">
+            </form>
+            <p id="n"></p>
+            <p id="js"></p>
+        </div>
+    <script>
+        //Nhập số nguyên a nếu a < 0 thì báo lỗi
+       function max(){
+         var a=parseInt(document.getElementById("a").value);
+         var i=0;
+         var sum=0;
+         while (i<=a) {
+            sum+=i;
+            i+=2;
+         }
+         document.getElementById("js").innerHTML = "Tổng là các số chẳn là: " +sum;
+        }
+       
+    </script>
+</body>
+</html>
