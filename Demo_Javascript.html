@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+    <style>
+        div{
+            padding: 10px;
+            text-align: center;
+            margin-top: 20px;
+            border: 1px solid lightgray;
+            border-radius: 10px;
+            width: 300px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: whitesmoke;
+        }
+        input{
+            margin: 10px;
+            padding: 5px;
+            border-radius: 10px;
+            border: 0.5px solid;
+        }
+    </style>
+</head>
+<body>
+        <div>
+            <form action="javascript:max()">
+                Nhập số A: <input id="a" type="number" ><br>
+                Nhập số B: <input id="b" type="number" ><br>
+                Nhập số C: <input id="c" type="number" ><br>
+        
+                <input type="submit" value="Submit">
+            </form>
+            <p id="js"></p>
+        </div>
+        <div>
+            <form action="javascript:check()">
+                Tên đăng nhập: <input id="user" type="text" ><br>
+                Mật khẩu: <input id="pass" type="password" ><br>
+        
+                <input type="submit" value="Đăng nhập">
+            </form>
+            <p id="log"></p>
+        </div>
+    <script>
+        //Nhập số nguyên a nếu a < 0 thì báo lỗi
+       function max(){
+         var a=parseInt(document.getElementById("a").value);
+         var b=parseInt(document.getElementById("b").value);
+         var c=parseInt(document.getElementById("c").value);
+         var max;
+         if(a>=b && a>=c)
+         {
+            max=a;
+         }
+        else if(b>=a && b>=c)
+        {
+            max=b;
+        }
+        else
+            {
+                max=c;
+            }
+         document.getElementById("js").innerHTML = "Số lớn nhất là: "+ max;
+       }
+       function check() {
+        var user=(document.getElementById("user").value);
+        var pass=(document.getElementById("pass").value);
+        if(user!='' && pass!='')
+        {
+            if(user=='admin' && pass=='123456')
+            {
+                document.getElementById("log").innerHTML = "Đăng nhập thành công!";
+            }
+            else
+            {
+                document.getElementById("log").innerHTML = "Sai tài khoản hoặc mật khẩu!";
+            }
+        }
+        else
+        {
+            document.getElementById("log").innerHTML = "Vui lòng nhập đầy đủ thông tin";
+        }
+       }
+    </script>
+</body>
+</html>
