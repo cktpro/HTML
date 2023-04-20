@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Loop</title>
+    <style>
+        div {
+            padding: 10px;
+            text-align: center;
+            margin-top: 20px;
+            border: 1px solid lightgray;
+            border-radius: 10px;
+            width: 300px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: whitesmoke;
+        }
+
+        input {
+            margin: 10px;
+            padding: 5px;
+            border-radius: 10px;
+            border: 0.5px solid;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <form action="javascript:TongMang()">
+            <h3>Bài 9</h3>
+            <h4>Nhập mảng bảo nhiêu số ?</h4>
+            <input id="b9" type="number"><br>
+            <input type="submit" value="Submit">
+        </form>
+        <p id="b9">A</p>
+    </div>
+    <div>
+        <form action="javascript:Mang2Chieu()">
+            <h3>Bài 10</h3>
+            <input type="submit" value="Click">
+            <p id="b10"></p>
+    </div>
+    <script>
+        function TongMang() {
+            var n = parseInt(document.getElementById("b9").value);
+            var dayso = new Array(n);
+            for (i = 0; i <= (dayso.length - 1); i++) {
+                var n = parseInt(prompt("Nhap số thứ " + (i + 1)));
+                dayso[i] = n;
+            }
+            var tong = 0;
+            var tongchan = 0;
+            for (i = 0; i <= (dayso.length - 1); i++) {
+
+                tong += parseInt(dayso[i]);
+                if (dayso[i] % 2 == 0) {
+                    tongchan += parseInt(dayso[i]);
+                }
+            }
+            alert("Kết quả: " + tong);
+        }
+        function Mang2Chieu() {
+            // var sv = new Array(4);
+            // sv[0] = new Array('01', 'Tram', 'Quang Tri', '0357081186');
+            // sv[1] = new Array('02', 'Nam', 'Quang Nam', '0357081186');
+            // sv[2] = new Array('03', 'Dung', 'Da Nang', '0357081186');
+            // sv[3] = new Array('04', 'Nhat', 'Hue', '0357081186');
+            // document.write("<table border='1' style=' border-collapse: collapse;'>")
+            // document.write("<tr><td>Mã sinh viên</td><td>Tên sinh viên</td><td>Địa chỉ</td><td>Phone</td><tr>");
+            // for (i = 0; i <= sv.length - 1; i++) {
+
+            //     document.write("<tr><td>" + sv[i][0] + "</td><td>" + sv[i][1] + "</td><td>" + sv[i][2] + "</td><td>" + sv[i][3] + "</td><tr>")
+            //     // document.write("Mã sv: "+sv[i][0]+" Tên sv: "+sv[i][1]+" Địa chỉ: "+ sv[i][2]+" SDT: "+sv[i][3]);
+
+
+            // }
+            // document.write("</table>")
+            var hoa=new Array('Hoa hồng','Hoa hướng dương','Hoa cúc',);
+            document.write("Số hoa: "+ hoa.length+"<br>")
+            document.write("Các loài hoa: "+ hoa.join(",")+"<br>")
+            document.write("Thêm 1 hoa: "+ hoa.push("Hoa mai")+"<br>")
+            document.write("Sắp Xếp: "+ hoa.sort()+"<br>")
+            document.write("Xóa: "+ hoa.pop()+"<br>")
+
+        }
+    </script>
+</body>
+
+</html>
