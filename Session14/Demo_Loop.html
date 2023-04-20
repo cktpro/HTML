@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Javascript</title>
+    <title>Demo Loop</title>
     <style>
-        div{
+        div {
             padding: 10px;
             text-align: center;
             margin-top: 20px;
@@ -17,7 +18,8 @@
             margin-right: auto;
             background-color: whitesmoke;
         }
-        input{
+
+        input {
             margin: 10px;
             padding: 5px;
             border-radius: 10px;
@@ -25,29 +27,49 @@
         }
     </style>
 </head>
+
 <body>
-        <div>
-            <form action="javascript:max()">
-                <h4>Nhập bao nhiêu số ?</h4><br>
-                <input id="a" type="number" ><br>
-                <input type="submit" value="Submit">
-            </form>
-            <p id="n"></p>
-            <p id="js"></p>
-        </div>
+    <div>
+        <form action="javascript:giaithua()">
+            <h3>Bài 6</h3>
+            <h4>Nhập số cần tính giai thừa</h4>
+            <input id="a" type="number"><br>
+            <input type="submit" value="Submit">
+        </form>
+        <p id="b6"></p>
+    </div>
+    <div>
+        <form action="javascript:daonguoc()">
+            <h3>Bài 6</h3>
+            <h4>Nhập số cần đảo ngược</h4>
+            <input id="b" type="number"><br>
+            <input type="submit" value="Submit">
+        </form>
+        <p id="b7"></p>
+    </div>
     <script>
-        //Nhập số nguyên a nếu a < 0 thì báo lỗi
-       function max(){
-         var a=parseInt(document.getElementById("a").value);
-         var i=0;
-         var sum=0;
-         while (i<=a) {
-            sum+=i;
-            i+=2;
-         }
-         document.getElementById("js").innerHTML = "Tổng là các số chẳn là: " +sum;
+        function giaithua() {
+            var a = parseInt(document.getElementById("a").value);
+            var gt = 1;
+            var i = 1;
+            for (i = 1; i <= a; i++) {
+                gt *= i;
+            }
+            document.getElementById("b6").innerHTML = "Kết quả: " + gt;
         }
-       
+        function daonguoc() {
+            var a = parseInt(document.getElementById("b").value);
+            var temp=0;
+            var rev = 0;
+            while (a != 0) {
+                phandu = a % 10;
+                rev = (rev * 10) + rev;
+                a=parseInt(a/10);
+            }
+            document.getElementById("b7").innerHTML = "Kết quả: " + rev;
+        }
+
     </script>
 </body>
+
 </html>
