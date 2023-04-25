@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Method</title>
+</head>
+
+<body>
+    <button onclick="new_window();">Click</button>
+    <script>
+        function hinhVuong() {
+            var hinhVuong = new Object()
+            hinhVuong.dai = 5;
+            hinhVuong.dientich = function () {
+                var s = hinhVuong.dai * hinhVuong.dai;
+                return s;
+            }
+            document.write("Diện tích hình vuông: " + hinhVuong.dientich())
+        }
+
+        function str() {
+            var str = new String('Công Nhân Việt Nam')
+            document.write("Số ký tự: " + str.length + "<br>")
+            document.write("Ký tự đầu và cuối: " + str.charAt(0) + " & " + str.charAt(str.length - 1) + "<br>")
+            document.write("Chữ hoa: " + str.toUpperCase() + "<br>")
+            document.write("Chữ thường: " + str.toLowerCase() + "<br>")
+            document.write("Tách chuỗi: " + str.split(" ") + "<br>")
+        }
+        function display_date() {
+            var today = new Date()
+            var date = today.getDate();
+            var month = today.getMonth();
+            month = month + 1;
+            var year = today.getFullYear();
+            alert("Hôm nay là : " + date + "/" + month + "/" + year)
+        }
+        function new_window() {
+            if(confirm("Bạn có muốn mở trang web này không")){
+            window.open('https://google.com/','_blank')
+            }
+            
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Dom</title>
+    <style>
+            img{
+                width: 700px;
+            }
+    </style>
+</head>
+<body>
+    <div>
+        <h2 id="myText">Ferarri Car</h2>
+        <img id="myImg" src="/images/ferrari.jpeg" alt="ferrari">
+        
+    </div>
+    <button onclick="change();">Click to change</button>
+    <script>
+        function change(){
+            text=document.getElementById("myImg").alt;
+            if(text="ferarri"){
+                alert("hello");
+                document.getElementById("myImg").src="/images/ford.jpeg";
+                document.getElementById("myImg").alt="ford";
+                document.getElementById("myText").innerHTML="Ford Car";
+            }
+            else{
+                alert("fe");
+                document.getElementById("myImg").src="/images/ferrari.jpeg";
+                document.getElementById("myImg").alt="ferrari";
+                document.getElementById("myText").innerHTML="Ferrari Car";
+            }
+        }
+    </script>
+</body>
+</html>

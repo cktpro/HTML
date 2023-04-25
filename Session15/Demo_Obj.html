@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Object</title>
+</head>
+<body>
+    <script>
+        var sv=new Object();
+        sv.name="Binh";
+        sv.age=23;
+        sv.add="Da Nang"
+        //Khỏi tạo đối tượng khách hàng
+        function KhachHang(fullname,age,addres){
+            this.fullname=fullname;
+            this.age=age;
+            this.address=addres;
+        }
+        var ObjKhachHang=new KhachHang("Nam",25,"Quảng Nam");
+        document.write("Tên khách hàng: "+ObjKhachHang.fullname)
+    </script>
+</body>
+</html>
