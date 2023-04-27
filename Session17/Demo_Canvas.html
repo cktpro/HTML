@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Canvas</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        #myCanvas{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="myCanvas" width="500" height="300"></canvas>
+    <div style="display: flex;">
+        <button onclick="canvasText();">Click Text</button>
+        <button onclick="canvasimg();">Click Images</button>
+    </div>
+    <script>
+        function canvasimg(){
+            var canvas= document.getElementById("myCanvas");
+            var ctext=canvas.getContext('2d');
+            var imgObj = new Image();
+            imgObj.onload=function(){
+                ctext.drawImage(imgObj,0,0,500,300);
+            };
+            imgObj.src="/images/ferrari.jpeg";
+        };
+        function canvasText(){
+            var canvas= document.getElementById("myCanvas");
+            var ctext=canvas.getContext('2d');
+            ctext.font="italic 30pt Calibri";
+            ctext.fillStyle="MediumVioletRed";
+            ctext.fillText("Hello",40,100);
+        };
+    </script>
+</body>
+</html>
