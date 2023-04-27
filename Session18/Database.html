@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Database</title>
+</head>
+<body>
+    <script>
+        var indexedDB = window.indexedDB || window.webkitindexedDB
+        var request = indexedDB.open("DBDemo",1);
+        request.onupgradeneeded = function(){
+            var db = request.result
+            var store= db.createObjectStore("Nhân Viên",{keyPath:"manv",autoIncrement:true})
+            var titleIndex =store.createIndex("TenNV","TenNV")
+            var authorIndex= store.createIndex("DiaChi","DiaChi")
+            store.put({TenNV:"Minh",DiaChi:"Đà Nẵng"})
+            store.put({TenNV:"Hậu",DiaChi:"Quảng Nam"})
+        }
+        request.onsuccess=function (event){
+            console.log("Thành công")
+        }
+        request.onerror= function(event){
+            console.log("Error")
+        }
+    </script>
+</body>
+</html>
