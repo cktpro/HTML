@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Storage</title>
+</head>
+<style>
+    div {
+            padding: 10px;
+            text-align: center;
+            margin-top: 20px;
+            border: 1px solid lightgray;
+            border-radius: 10px;
+            width: 300px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: whitesmoke;
+        }
+
+        input {
+            margin: 10px;
+            padding: 5px;
+            border-radius: 10px;
+            border: 0.5px solid;
+        }
+</style>
+<body>
+    <div>
+        <form action="javascript:login();">
+            Username: <input type="text" id="username" value="" size="20">
+            Password: <input type="password" id="pass" value="" size="20">
+            <input type="submit" name="submit" id="submit" value="Đăng nhập">
+        </form>
+        <p id="js"></p>
+    </div>
+    <script>
+        function login(){
+        localStorage.clear();
+        var user= document.getElementById("username").value
+        var pass= document.getElementById("pass").value
+        if(user=="admin" && pass=="123456"){
+        localStorage.setItem("username",user)
+        localStorage.setItem("pass",pass)
+        document.getElementById("js").innerHTML="Đăng nhập thành công <br> Tên tài khoản là: "+user
+        }
+        else{
+            document.getElementById("js").innerHTML="Đăng nhập thất bại"
+        }
+    }
+    </script>
+</body>
+</html>
