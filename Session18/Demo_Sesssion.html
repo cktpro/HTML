@@ -28,25 +28,26 @@
 </style>
 <body>
     <div>
-        <form action="javascript:login();">
-            Username: <input type="text" id="username" value="" size="20">
-            Password: <input type="password" id="pass" value="" size="20">
-            <input type="submit" name="submit" id="submit" value="Đăng nhập">
+        <form method="post" name="nform" action="">
+            Username: <input type="text" id="txtusername"  size="20">
+            Password: <input type="password" id="txtpass"  size="20">
+            <input type="submit" name="submit" id="submit" onclick="login()" value="Đăng nhập">
         </form>
         <p id="js"></p>
     </div>
     <script>
         function login(){
         localStorage.clear();
-        var user= document.getElementById("username").value
-        var pass= document.getElementById("pass").value
+        var user= document.getElementById("txtusername").value
+        var pass= document.getElementById("txtpass").value
         if(user=="admin" && pass=="123456"){
         localStorage.setItem("username",user)
         localStorage.setItem("pass",pass)
-        document.getElementById("js").innerHTML="Đăng nhập thành công <br> Tên tài khoản là: "+user
+        alert("Đăng nhập thành công")
+        document.nform.action="./Login.html"
         }
         else{
-            document.getElementById("js").innerHTML="Đăng nhập thất bại"
+            alert("Đăng nhập thất bại")
         }
     }
     </script>
