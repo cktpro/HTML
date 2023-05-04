@@ -13,10 +13,11 @@
         request.onupgradeneeded = function(){
             var db = request.result
             var store= db.createObjectStore("Nhân Viên",{keyPath:"manv",autoIncrement:true})
-            var titleIndex =store.createIndex("TenNV","TenNV")
-            var authorIndex= store.createIndex("DiaChi","DiaChi")
+            var titleIndex =store.createIndex("byTenNV","TenNV")
+            var authorIndex= store.createIndex("byDiaChi","DiaChi")
             store.put({TenNV:"Minh",DiaChi:"Đà Nẵng"})
             store.put({TenNV:"Hậu",DiaChi:"Quảng Nam"})
+            store.put({TenNV:"Trầm",DiaChi:"Quảng Trị"})
         }
         request.onsuccess=function (event){
             console.log("Thành công")

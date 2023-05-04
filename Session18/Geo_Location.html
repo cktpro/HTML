@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Location</title>
+</head>
+<body>
+    <input type="button" value="Click" onclick="getLocation();">
+    <script>
+        function getLocation(){
+            if(navigator.geolocation){
+                navigator.geolocation.getCurrentPosition(showPositon);
+            }
+            else{
+                alert("GeoLocation is not supported in this browser.")
+            }
+        }
+        function showPositon(position){
+            document.write("Latitude: "+position.coords.latitude+ "\n" + "Longitude: "+position.coords.longitude+ "\n")
+        }
+    </script>
+</body>
+</html>
