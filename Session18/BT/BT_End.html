@@ -12,68 +12,50 @@
 </head>
 
 <body>
-    <div class="form">
-
-        <Form action="javascript:checkpass();">
-            <h1 class="text-center">Register</h1>
-            <p class="text-center">Create your account.It's free and only takes a minute.</p>
-            <div class="row">
-                <div class="col">
-                    <input class="inputfull" type="text" placeholder="First Name" id="firstname" required>
-                </div>
-                <div class="col">
-                    <input class="inputfull" type="text" placeholder="Last Name" id="lastname" required>
+    <header>
+        <div class="row my-3">
+            <img class="logo img-fluid" src="./Images/banner-sm.jpeg" alt="">
+        </div>
+    </header>
+   <section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-12">
+                <img class="img-main" src="./Images/images.png" alt="">
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <div class="form align-items-center">
+                    <Form action="javascript:login();">
+                        <p class="text-center">SYSTEM MANAGEMENT</p>
+                        <label for="">Username:</label>
+                        <input class="inputfull" type="text" placeholder="Enter Username" id="user"
+                             required>
+                        <label for="">Password:</label>
+                        <!-- pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" -->
+                        <input class="inputfull" type="password" placeholder="Password"
+                             id="pass" required>
+                        <input class="inputfull btn-green p-2" type="submit" id="button" value="Login System">
+                    </Form>
                 </div>
             </div>
-            <input class="inputfull" type="email" placeholder="Email" id="email"
-                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
-            <input class="inputfull" type="password" placeholder="Password"
-                pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" id="pass" required>
-            <input class="inputfull" type="password" placeholder="Confirm Password"
-                pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" id="cfpass" required>
-            <div class="mb-3"><input type="checkbox" class="me-1">I accept the <a href="">Term of User</a> & <a
-                    href="">Privacy Policy</a></div>
-            <input class="inputfull btn-green p-2" type="submit" value="Register Now" disabled>
-        </Form>
+        </div>
+        <div class="row my-0 py-0"> 
+            <div class="text-center">
+                <p class="figcap">| Aptech Programer | Aptech Arena |</p>
+            </div>
+        </div>
+        <div class="row"> 
+            <a href="https://aptech-danang.edu.vn"><button class="btn btn-aptech my-2">Aptech-SoftTech</button></a>
+        </div>
     </div>
-    <script>
-        var store;
-        function checkpass() {
-            pass1 = document.getElementById("pass").value
-            pass2 = document.getElementById("cfpass").value
-            if (pass1 == pass2) {
-                createDB();
-                alert("Đăng ký thành công")
-            }
-            else {
-                alert("Mật khẩu xác nhận không chính xác")
-            }
-
-        }
-        function createDB() {
-            var fName = document.getElementById("firstname").value;
-            var lName = document.getElementById("lastname").value;
-            var mail = document.getElementById("email").value;
-            var pas = document.getElementById("pass").value;
-            var indexedDB = window.indexedDB || window.webkitindexedDB
-            var request = indexedDB.open("Database", 1);
-            request.onupgradeneeded = function () {
-                var db = request.result
-                store = db.createObjectStore("Registers",{keyPath:"ID",autoIncrement:true})
-                var firstName = store.createIndex("FirstName", "FirstName")
-                var lastName = store.createIndex("LastName", "LastName")
-                var Email = store.createIndex("Email", "Email")
-                var Password = store.createIndex("Password", "Password")
-                store.put({FirstName:fName,LastName:lName,Email:mail,Password:pas})
-            }
-            request.onsuccess = function (event) {
-                console.log("Thành công")
-            }
-            request.onerror = function (event) {
-                console.log("Error")
-            }
-        }
-    </script>
+   </section>
+   <footer>
+    <div class="footer row text-center">
+        <p class="mb-0">&copy; 2023 Copyright <a href="https://aptech-danang.edu.vn" target="_blank">Softtech-Aptech | </a><a href="https://aptech-danang.edu.vn" target="_blank">Programer-Aptech-Arena |</a></p>
+        <p>Author: <a href="https://aptech-danang.edu.vn" target="_blank">Softtech Join Stock Company</a></p>
+    </div>
+   </footer>
+    <script src="./BT_End.js"></script>
 </body>
 
 </html>
